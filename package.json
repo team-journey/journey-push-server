@@ -19,6 +19,9 @@
     "@types/express": "^4.17.12",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^15.12.5",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.6",
+    "fcm-node": "^1.6.1",
     "firebase-admin": "^9.10.0",
     "nodemon": "^2.0.9",
     "ts-node": "^10.0.0",
@@ -33,5 +36,6 @@
   "bugs": {
     "url": "https://github.com/team-journey/journey-server/issues"
   },
-  "homepage": "https://github.com/team-journey/journey-server#readme"
+  "homepage": "https://github.com/team-journey/journey-server#readme",
+  "proxy": "http://localhost:5000"
 }
