@@ -20,7 +20,7 @@ const collapse_key = '';
 //   credential: admin.credential.cert(firebaseAccount),
 // });
 
-const journeyAlarm = schedule.scheduleJob('0 43 02 * * *', async function() {
+const journeyAlarm = schedule.scheduleJob('0 10 03 * * *', async function() {
   let date = new Date();
   console.log(
     `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
@@ -60,35 +60,3 @@ const journeyAlarm = schedule.scheduleJob('0 43 02 * * *', async function() {
     )} 입니다.`
   );
 })
-
-// app.use(express.json());
-
-// // error handler
-// app.use(function (err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get("env") === "production" ? err : {};
-
-  
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.json({
-//     message: err.message,
-//     error: err
-//   });
-//   res.render("error");
-  
-// });
-
-// app
-//   .listen(5000, () => {
-//     console.log(`
-//     ################################################
-//     🛡️  Server listening on port: 5000 🛡️
-//     ################################################
-//   `);
-//   })
-//   .on("error", (err) => {
-//     console.error(err);
-//     process.exit(1);
-//   });
