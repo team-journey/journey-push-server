@@ -20,7 +20,7 @@ const collapse_key = '';
 //   credential: admin.credential.cert(firebaseAccount),
 // });
 
-const journeyAlarm = schedule.scheduleJob('0 10 02 * * *', async function() {
+const journeyAlarm = schedule.scheduleJob('0 40 02 * * *', async function() {
   let date = new Date();
   console.log(
     `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
@@ -33,17 +33,15 @@ const journeyAlarm = schedule.scheduleJob('0 10 02 * * *', async function() {
   // const registration_ids = await axios.get(`${config.journeyURL}/api/users`);
   const registration_ids = [
     'fZBZtMtjk0pdqiyW-Qln7-:APA91bHFcZinM88tH7GJuMFCDdhKG4Nzd4m0uQNJjvXGQ-d4B6PAbO5X72VxzsEFjcoab8EEgN3CYlV82H58StIjfPdSvFhbO1xYRsnSGB7HHw-Bj4zb44NTxD6tT6b-bx1lKhSLOwG4',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjI2MzMyMzkyfQ.lzqwiG-7w6PPQtw-arpjmrc6qEGOO3vi6UoWCtUP6oo',
     'e_0GyXigjUp_nEwlqJXf4y:APA91bGBRb9ID8GiBpyf495pg91MGU1vGKKbtLhPxwXXeIAPGh6fbLI0Td1YVLd-9tzBn__ruqGBkG-Kzfqyq9DoiPsgRcDB7JV0ju3Ad1O-02atOCcsHAim-7yt-acsB1Fek5I5DZ1H',
     'ecVV7Tk4DEXvra9nJyre19:APA91bEyokK8ly52zRJe9u5w9ma8Zhtc9uNO-L92ZKgvq2EUBnq9USCjo1r36TXCU8RppgfFbPsB2xoKghMnkThYyRzN1mmv_lYsH5y94yGKK_mGmJKOJRMTvBswN_EEnqVml2m88FZL',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjI2Mjk3Mjg2fQ.j94Z3ujBSsu4fxyFh7wlOeFMLqmEWfWVI9LQB59fK2k'
   ]
   console.log(registration_ids)
   
   const message = {
     registration_ids:  registration_ids,
     notification: {
-      title: '잘잤어 우리 아기 고양이?',
+      title: '작업하고있니 우리 아기 고양이?',
     },
   };
 
