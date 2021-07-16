@@ -18,7 +18,7 @@ const collapse_key = '';
 // admin.initializeApp({
 //   credential: admin.credential.cert(firebaseAccount),
 // });
-const journeyAlarm = node_schedule_1.default.scheduleJob('0 15 03 * * *', async function () {
+const journeyAlarm = node_schedule_1.default.scheduleJob('0 */1 * * * *', async function () {
     let date = new Date();
     console.log(`시작 시각 ${dayjs_1.default(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
     // 전체 유저의 fcm token 값들을 가져온다.
