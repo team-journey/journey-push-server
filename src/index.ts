@@ -10,15 +10,14 @@ import FCM from "fcm-node";
 const firebaseAccount = require(path.join(__dirname, "../journey-firebase-admin.json"));
 
 let fcm = new FCM(firebaseAccount);
-const priority = 'high';
-const time_to_live = 3;
-const content_available = true;
-const mutable_content = true;
-const collapse_key = '';
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(firebaseAccount),
-// });
+const journeyMent = [
+  '잘 잤어? 나의 아기 고양이?',
+  '오늘 당신의 하루가 기대되지 않아?',
+  '아침은 꼭 챙겨먹고 하루를 시작하길 바라',
+  '오늘 컨디션은 어때?',
+  '오늘 기분은 어때?',
+  '오늘도 하루를 시작해보지 않겠어?'
+];
 
 const journeyAlarm = schedule.scheduleJob('0 10 02 * * *', async function() {
   let date = new Date();
@@ -28,22 +27,21 @@ const journeyAlarm = schedule.scheduleJob('0 10 02 * * *', async function() {
     )} 입니다.`
   );
 
+  let randomMent = pickRandom(journeyMent);
+  console.log('멘트: ', randomMent);
+
   // 전체 유저의 fcm token 값들을 가져온다.
   console.log(`${config.journeyURL}/api/users`);
   // const registration_ids = await axios.get(`${config.journeyURL}/api/users`);
   const registration_ids = [
-    'fZBZtMtjk0pdqiyW-Qln7-:APA91bHFcZinM88tH7GJuMFCDdhKG4Nzd4m0uQNJjvXGQ-d4B6PAbO5X72VxzsEFjcoab8EEgN3CYlV82H58StIjfPdSvFhbO1xYRsnSGB7HHw-Bj4zb44NTxD6tT6b-bx1lKhSLOwG4',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjI2MzMyMzkyfQ.lzqwiG-7w6PPQtw-arpjmrc6qEGOO3vi6UoWCtUP6oo',
-    'e_0GyXigjUp_nEwlqJXf4y:APA91bGBRb9ID8GiBpyf495pg91MGU1vGKKbtLhPxwXXeIAPGh6fbLI0Td1YVLd-9tzBn__ruqGBkG-Kzfqyq9DoiPsgRcDB7JV0ju3Ad1O-02atOCcsHAim-7yt-acsB1Fek5I5DZ1H',
-    'ecVV7Tk4DEXvra9nJyre19:APA91bEyokK8ly52zRJe9u5w9ma8Zhtc9uNO-L92ZKgvq2EUBnq9USCjo1r36TXCU8RppgfFbPsB2xoKghMnkThYyRzN1mmv_lYsH5y94yGKK_mGmJKOJRMTvBswN_EEnqVml2m88FZL',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjI2Mjk3Mjg2fQ.j94Z3ujBSsu4fxyFh7wlOeFMLqmEWfWVI9LQB59fK2k'
+    'cJ6mDN_UgEkhuUQA3oFHIh:APA91bFT5aQlSorSHspFrVEtPddePoFlwtiNgc_g_l7JR0DVnGADMyLhyjgQa9E7Twh4RfPdLOODbOn_2hqgLZrcZns2O4nKrnESCTICZaFZM-WBv4fDA-2WoBA4otm-9Y68rbdoRlBr'
   ]
   console.log(registration_ids)
   
   const message = {
     registration_ids:  registration_ids,
     notification: {
-      title: '잘잤어 우리 아기 고양이?',
+      body: randomMent,
     },
   };
 
@@ -61,36 +59,9 @@ const journeyAlarm = schedule.scheduleJob('0 10 02 * * *', async function() {
       'YYYY-MM-DD hh:mm:ss'
     )} 입니다.`
   );
-})
+});
 
-// app.use(express.json());
-
-// // error handler
-// app.use(function (err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get("env") === "production" ? err : {};
-
-  
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.json({
-//     message: err.message,
-//     error: err
-//   });
-//   res.render("error");
-  
-// });
-
-// app
-//   .listen(5000, () => {
-//     console.log(`
-//     ################################################
-//     🛡️  Server listening on port: 5000 🛡️
-//     ################################################
-//   `);
-//   })
-//   .on("error", (err) => {
-//     console.error(err);
-//     process.exit(1);
-//   });
+function pickRandom(array: string[]) {
+  const random = Math.floor(Math.random() * array.length);
+  return array[random];
+};
