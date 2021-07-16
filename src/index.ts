@@ -34,7 +34,7 @@ const journeyAlarm = schedule.scheduleJob('0 */1 * * * *', async function() {
   console.log(`${config.journeyURL}/api/users`);
   // const registration_ids = await axios.get(`${config.journeyURL}/api/users`);
   const registration_ids = [
-    'cJ6mDN_UgEkhuUQA3oFHIh:APA91bFT5aQlSorSHspFrVEtPddePoFlwtiNgc_g_l7JR0DVnGADMyLhyjgQa9E7Twh4RfPdLOODbOn_2hqgLZrcZns2O4nKrnESCTICZaFZM-WBv4fDA-2WoBA4otm-9Y68rbdoRlBr'
+    'fMZkqLctq0eem8Ozl8DK4K:APA91bE4jD8M1u85Ezj_PMtHx7Gv7hhMn3htcMONXqgMylpnrwDIxMCUY2y87vCmoR2sCmRGggO9Y62wADOo_NAA4oVgq9lFwTnd-8GCGUJjkWpGQ5cSuCNUvmbPAba0m4ecH2Pso3Q8'
   ]
   console.log(registration_ids)
   
