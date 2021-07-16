@@ -29,8 +29,10 @@ const journeyAlarm = node_schedule_1.default.scheduleJob('0 */1 * * * *', async 
         'e_0GyXigjUp_nEwlqJXf4y:APA91bGBRb9ID8GiBpyf495pg91MGU1vGKKbtLhPxwXXeIAPGh6fbLI0Td1YVLd-9tzBn__ruqGBkG-Kzfqyq9DoiPsgRcDB7JV0ju3Ad1O-02atOCcsHAim-7yt-acsB1Fek5I5DZ1H',
         'ecVV7Tk4DEXvra9nJyre19:APA91bEyokK8ly52zRJe9u5w9ma8Zhtc9uNO-L92ZKgvq2EUBnq9USCjo1r36TXCU8RppgfFbPsB2xoKghMnkThYyRzN1mmv_lYsH5y94yGKK_mGmJKOJRMTvBswN_EEnqVml2m88FZL',
         'ep4RhYrbTHOnhzARWNTSS1:APA91bHKZFvBnREutA-c41Jczt0HO5IBCr0Xs3EZv1EqFRV_ccNlzkClT-ilfOqFMAVNaOPV1iXHB22lxkpvIEcS5n-24-g66ITuwJ5ioZZRmaWyGT7_6bP8eGPNdwvJCpQlYoWZBXGT',
-        'd45DgY4-R5O1OF5SSgYss3:APA91bGZuy5Sof-4SVaAaOtPiFcI2G9dVj-4SFeX5JbTQUg9SxXx0b28rErR26xa02VgOIxap44BM6kq4T8TddxljJbTuGroiD2UYXlKse17wqh54D2tyaHf7jhWao2sPTs8RBwkxftn',
-        'eH4yZ1YdR0b1hPp1IrLCST:APA91bHLwDpnAti8-Q2sy4bjVmywyhMvLpT8RvDEg3QMgzH1TtARbc350RTbJIKPK5k4MRlp8dLj4Yx-L12BaOHdSgq4QRy4yBc0vaPyYuuMa_6gTP1d6mCqsZGZ5rKPjbf6wmKi8XKb'
+        'erP1Zcfsy0cvmMIWRJc2SY:APA91bGPtMxJ3NXZoJGTwxvQ1KV8mdMunK5qk2fzI8KjIe70p-xxjII2Uy6-VHB3dCDdeqU0_oQenLdD_dae3WG1Njdm_ZkC0brWenDWocUqbuAFoKLoO18gudcdn-4JXiBSknnPHsEJ',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjI2MzY3NzEwfQ.uG4ef0NSaAl4OJSjg_UsR5EG6B-IJkXKAc3dR9LYgcQ',
+        'dECshRlkeUGJv9iaWdlvj8:APA91bEA5exwcnj-BB2_3JWIfl29z8pPW6xwDSae5Gyy5slw5Y012CYDpr80xmj9Jo-Epu_XZyBPZSvqz6zs4mWhAiQPcC_5KyruANrAIW7GyBGlri7GAR9xrQGjAMexj_NMXYfkdpV8',
+        'foI117BUTi-b_r47PMYZYz:APA91bHzyh3vdJnYECr0wMJ2n6SQdrZec1qFJasxozNMXOAAkQvXHU9SVy19qB6MSnP3LUFGwb_wl0a21UyI22-kQOFHJGR9y0VBreVLIAbMqlvINLU_zR2kt2CqSaQht6-LCXsWqDfX'
     ];
     console.log(registration_ids);
     const message = {
