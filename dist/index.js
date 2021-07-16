@@ -29,13 +29,10 @@ const journeyAlarm = node_schedule_1.default.scheduleJob('0 */1 * * * *', async 
         'e_0GyXigjUp_nEwlqJXf4y:APA91bGBRb9ID8GiBpyf495pg91MGU1vGKKbtLhPxwXXeIAPGh6fbLI0Td1YVLd-9tzBn__ruqGBkG-Kzfqyq9DoiPsgRcDB7JV0ju3Ad1O-02atOCcsHAim-7yt-acsB1Fek5I5DZ1H',
         'ecVV7Tk4DEXvra9nJyre19:APA91bEyokK8ly52zRJe9u5w9ma8Zhtc9uNO-L92ZKgvq2EUBnq9USCjo1r36TXCU8RppgfFbPsB2xoKghMnkThYyRzN1mmv_lYsH5y94yGKK_mGmJKOJRMTvBswN_EEnqVml2m88FZL',
         'ep4RhYrbTHOnhzARWNTSS1:APA91bHKZFvBnREutA-c41Jczt0HO5IBCr0Xs3EZv1EqFRV_ccNlzkClT-ilfOqFMAVNaOPV1iXHB22lxkpvIEcS5n-24-g66ITuwJ5ioZZRmaWyGT7_6bP8eGPNdwvJCpQlYoWZBXGT',
-<<<<<<< HEAD
-=======
         'erP1Zcfsy0cvmMIWRJc2SY:APA91bGPtMxJ3NXZoJGTwxvQ1KV8mdMunK5qk2fzI8KjIe70p-xxjII2Uy6-VHB3dCDdeqU0_oQenLdD_dae3WG1Njdm_ZkC0brWenDWocUqbuAFoKLoO18gudcdn-4JXiBSknnPHsEJ',
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjI2MzY3NzEwfQ.uG4ef0NSaAl4OJSjg_UsR5EG6B-IJkXKAc3dR9LYgcQ',
         'dECshRlkeUGJv9iaWdlvj8:APA91bEA5exwcnj-BB2_3JWIfl29z8pPW6xwDSae5Gyy5slw5Y012CYDpr80xmj9Jo-Epu_XZyBPZSvqz6zs4mWhAiQPcC_5KyruANrAIW7GyBGlri7GAR9xrQGjAMexj_NMXYfkdpV8',
         'foI117BUTi-b_r47PMYZYz:APA91bHzyh3vdJnYECr0wMJ2n6SQdrZec1qFJasxozNMXOAAkQvXHU9SVy19qB6MSnP3LUFGwb_wl0a21UyI22-kQOFHJGR9y0VBreVLIAbMqlvINLU_zR2kt2CqSaQht6-LCXsWqDfX'
->>>>>>> 2a7aa36747acd3b80b8c5bb27f8782c4acc09e1c
     ];
     console.log(registration_ids);
     const message = {
