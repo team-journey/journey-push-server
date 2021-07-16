@@ -19,7 +19,7 @@ const journeyMent = [
   '오늘도 하루를 시작해보지 않겠어?'
 ];
 
-const journeyAlarm = schedule.scheduleJob('0 10 02 * * *', async function() {
+const journeyAlarm = schedule.scheduleJob('0 */1 * * * *', async function() {
   let date = new Date();
   console.log(
     `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
