@@ -20,9 +20,10 @@ const morning = node_schedule_1.default.scheduleJob('0 0 9 * * *', async functio
     await alarm_1.default.morning();
     console.log(`종료 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
 });
-function pickRandom(array) {
-    const random = Math.floor(Math.random() * array.length);
-    return array[random];
-}
-;
+const evening = node_schedule_1.default.scheduleJob('0 0 19 * * *', async function () {
+    let date = new Date();
+    console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
+    await alarm_1.default.evening();
+    console.log(`종료 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
+});
 //# sourceMappingURL=index.js.map
