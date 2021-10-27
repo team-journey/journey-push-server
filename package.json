@@ -1,7 +1,7 @@
 {
-  "name": "journey-server",
+  "name": "mohaeng-push-server",
   "version": "1.0.0",
-  "description": "🌹 쟈기들과는 async 하고싶지 않아.. 오로지 sync.. 🌹",
+  "description": "모행? 나랑놀자!",
   "main": "src/index.ts",
   "scripts": {
     "dev": "ts-code src",
@@ -18,14 +18,14 @@
   "devDependencies": {
     "@types/express": "^4.17.12",
     "@types/mongoose": "^5.11.97",
-    "@types/node": "^15.12.5",
+    "@types/node": "^16.11.6",
     "axios": "^0.21.1",
     "dayjs": "^1.10.6",
     "fcm-node": "^1.6.1",
     "firebase-admin": "^9.10.0",
     "nodemon": "^2.0.9",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.4"
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
   },
   "repository": {
     "type": "git",

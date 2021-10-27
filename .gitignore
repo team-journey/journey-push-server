@@ -10,6 +10,7 @@
 
 # production
 /build
+/src/dummy
 
 # misc
 .DS_Store
@@ -24,4 +25,4 @@ yarn-error.log*
 yarn.lock
 
 .env
-journey-firebase-admin.json
+mohaeng.json
