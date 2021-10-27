@@ -28,12 +28,6 @@ const morning = schedule.scheduleJob('0 0 9 * * *', async function () {
   );
 });
 
-<<<<<<< HEAD
-function pickRandom(array: string[]) {
-  const random = Math.floor(Math.random() * array.length);
-  return array[random];
-};
-=======
 const evening = schedule.scheduleJob('0 0 19 * * *', async function () {
   let date = new Date();
   console.log(
@@ -50,4 +44,3 @@ const evening = schedule.scheduleJob('0 0 19 * * *', async function () {
     )} 입니다.`
   );
 })
->>>>>>> b693f2bd2a72366dbfd2b0462008c75284d60025
