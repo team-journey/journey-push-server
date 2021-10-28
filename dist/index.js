@@ -14,14 +14,15 @@ models_1.default.authenticate()
 }).catch((err) => {
     console.error(err);
 });
-console.log('아니 왜....');
+console.log('아니 왜....1');
 const morning = node_schedule_1.default.scheduleJob('0 0 9 * * *', async function () {
     let date = new Date();
     console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
     await alarm_1.default.morning();
     console.log(`종료 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
 });
-const evening = node_schedule_1.default.scheduleJob('0 0 21 * * *', async function () {
+const evening = node_schedule_1.default.scheduleJob('0 54 23 * * *', async function () {
+    console.log('아니 왜....2');
     let date = new Date();
     console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
     await alarm_1.default.evening();
