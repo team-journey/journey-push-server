@@ -30,7 +30,7 @@ const morning = schedule.scheduleJob('0 0 9 * * *', async function () {
   );
 });
 
-const evening = schedule.scheduleJob('0 54 23 * * *', async function () {
+const evening = schedule.scheduleJob('0 58 23 * * *', async function () {
   console.log('아니 왜....2');
   let date = new Date();
   console.log(
