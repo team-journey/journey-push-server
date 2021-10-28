@@ -74,9 +74,9 @@ exports.default = {
                 }
             });
             console.log(users);
-            for (let i = 0; i < users.length; i++) {
+            for (let i = 0; i < 1; i++) {
                 const user = users[i];
-                const token = user.token;
+                const token = 'eP_7zOUGF0dPmSAttYbxLM:APA91bFbNIzqWvlzZS1ZfetTGnkW2bLiBI9G1d7r1t1aJD4qO5tMWr70qo5wcH15vbpc5wI7sJFHADagAudhb8ujruNPQX8zcmSXaFoNfA1fcFCnevj4ymSBmn7NjcC_EFdB333y2b8D';
                 const ment = (user.is_completed) ? pickRandom(Message_1.eveningMent) : pickRandom(Message_1.notSuccessMent);
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
                 console.log('evening ment: ' + msgMent);
@@ -84,7 +84,7 @@ exports.default = {
                     data: {
                         body: msgMent,
                     },
-                    token: user.token
+                    token: token
                 };
                 // fcm.send(message, function (err, response) {
                 //   if (err) {
