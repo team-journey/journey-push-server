@@ -6,7 +6,13 @@ import { eveningMent, morningMent, notSuccessMent } from '../dummy/Message';
 import { Message } from '../models/Message';
 import { User } from '../models/User';
 
+const admin = require('firebase-admin');
 const firebaseAccount = require(path.join(__dirname, "../../mohaeng.json"));
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(firebaseAccount)
+// });
+
 let fcm = new FCM(firebaseAccount);
 const Op = sequelize.Op;
 
@@ -38,18 +44,20 @@ export default {
           token: user.token
         };
         
-        fcm.send(message, function (err, response) {
-          if (err) {
-            console.log("FAIL: " + err.message);
-          } else {
+        admin
+          .messaging()
+          .send(message)
+          .then(function (response) {
             console.log("SUCCESS: " + response);
             Message.create({
               user_id: user.id,
               ment: ment.join("ㅡ"),
               is_new: false
             });
-          }
-        });
+          })
+          .catch(function (err) {
+            console.log("FAIL: " + err.message);
+          });
       }
     } catch (err) {
       console.log('********************* morning alarm error *********************');
@@ -83,18 +91,33 @@ export default {
           token: user.token
         };
         
-        fcm.send(message, function (err, response) {
-          if (err) {
-            console.log("FAIL: " + err.message);
-          } else {
+        // fcm.send(message, function (err, response) {
+        //   if (err) {
+        //     console.log("FAIL: " + err.message);
+        //   } else {
+        //     console.log("SUCCESS: " + response);
+        //     Message.create({
+        //       user_id: user.id,
+        //       ment: ment.join("ㅡ"),
+        //       is_new: false
+        //     });
+        //   }
+        // });
+
+        admin
+          .messaging()
+          .send(message)
+          .then(function (response) {
             console.log("SUCCESS: " + response);
             Message.create({
               user_id: user.id,
               ment: ment.join("ㅡ"),
               is_new: false
             });
-          }
-        });
+          })
+          .catch(function (err) {
+            console.log("FAIL: " + err.message);
+          });
       }
     } catch (err) {
       console.log('********************* evening alarm error *********************');

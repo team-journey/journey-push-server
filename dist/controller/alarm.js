@@ -9,7 +9,11 @@ const sequelize_1 = __importDefault(require("sequelize"));
 const Message_1 = require("../dummy/Message");
 const Message_2 = require("../models/Message");
 const User_1 = require("../models/User");
+const admin = require('firebase-admin');
 const firebaseAccount = require(path_1.default.join(__dirname, "../../mohaeng.json"));
+// admin.initializeApp({
+//   credential: admin.credential.cert(firebaseAccount)
+// });
 let fcm = new fcm_node_1.default(firebaseAccount);
 const Op = sequelize_1.default.Op;
 exports.default = {
@@ -37,18 +41,19 @@ exports.default = {
                     },
                     token: user.token
                 };
-                fcm.send(message, function (err, response) {
-                    if (err) {
-                        console.log("FAIL: " + err.message);
-                    }
-                    else {
-                        console.log("SUCCESS: " + response);
-                        Message_2.Message.create({
-                            user_id: user.id,
-                            ment: ment.join("ㅡ"),
-                            is_new: false
-                        });
-                    }
+                admin
+                    .messaging()
+                    .send(message)
+                    .then(function (response) {
+                    console.log("SUCCESS: " + response);
+                    Message_2.Message.create({
+                        user_id: user.id,
+                        ment: ment.join("ㅡ"),
+                        is_new: false
+                    });
+                })
+                    .catch(function (err) {
+                    console.log("FAIL: " + err.message);
                 });
             }
         }
@@ -81,18 +86,31 @@ exports.default = {
                     },
                     token: user.token
                 };
-                fcm.send(message, function (err, response) {
-                    if (err) {
-                        console.log("FAIL: " + err.message);
-                    }
-                    else {
-                        console.log("SUCCESS: " + response);
-                        Message_2.Message.create({
-                            user_id: user.id,
-                            ment: ment.join("ㅡ"),
-                            is_new: false
-                        });
-                    }
+                // fcm.send(message, function (err, response) {
+                //   if (err) {
+                //     console.log("FAIL: " + err.message);
+                //   } else {
+                //     console.log("SUCCESS: " + response);
+                //     Message.create({
+                //       user_id: user.id,
+                //       ment: ment.join("ㅡ"),
+                //       is_new: false
+                //     });
+                //   }
+                // });
+                admin
+                    .messaging()
+                    .send(message)
+                    .then(function (response) {
+                    console.log("SUCCESS: " + response);
+                    Message_2.Message.create({
+                        user_id: user.id,
+                        ment: ment.join("ㅡ"),
+                        is_new: false
+                    });
+                })
+                    .catch(function (err) {
+                    console.log("FAIL: " + err.message);
                 });
             }
         }
