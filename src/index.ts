@@ -13,12 +13,8 @@ sequelize.authenticate()
 
 console.log('아니 왜....1');
 
-let date = new Date();
-  console.log(
-    `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
-      'YYYY-MM-DD hh:mm:ss'
-    )} 입니다.`
-  );
+let ex = new Date();
+console.log('서버시간: ' + ex);
 
 const morning = schedule.scheduleJob('0 0 9 * * *', async function () {
   let date = new Date();
