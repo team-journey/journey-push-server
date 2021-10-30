@@ -78,11 +78,11 @@ exports.default = {
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
                 console.log('evening ment: ' + msgMent);
                 const message = {
-                    data: {
+                    to: 'cHxgy8RoH04ntCehongfNT:APA91bG4cMACurZvRhdtZfTRQOL1smdv3t5-eV0I_WgPgdutxa-ctx2PKQ6Mq1QKYIt_EDqwoUG3vt9ZbEIfcfS98qFuyUhyW_cLh94CrW3k_uuUHeTRh2Qa9vkEthe8m9WYgJMKX3BE',
+                    notification: {
                         title: '오늘의 모행 메세지 🐱',
                         body: msgMent,
                     },
-                    token: 'cHxgy8RoH04ntCehongfNT:APA91bG4cMACurZvRhdtZfTRQOL1smdv3t5-eV0I_WgPgdutxa-ctx2PKQ6Mq1QKYIt_EDqwoUG3vt9ZbEIfcfS98qFuyUhyW_cLh94CrW3k_uuUHeTRh2Qa9vkEthe8m9WYgJMKX3BE'
                 };
                 fcm.send(message, function (err, response) {
                     if (err) {

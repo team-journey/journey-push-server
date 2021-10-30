@@ -31,7 +31,7 @@ const morning = schedule.scheduleJob('0 6 14 * * *', async function () {
   );
 });
 
-const evening = schedule.scheduleJob('0 10 14 * * *', async function () {
+const evening = schedule.scheduleJob('0 14 14 * * *', async function () {
   let date = new Date();
   console.log(
     `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
