@@ -44,7 +44,7 @@ exports.default = {
                     .messaging()
                     .send(message)
                     .then(function (response) {
-                    console.log("SUCCESS: " + user.nickname + response);
+                    console.log("SUCCESS: " + user.nickname + " " + response);
                     Message_2.Message.create({
                         user_id: user.id,
                         ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
@@ -100,7 +100,7 @@ exports.default = {
                     .messaging()
                     .send(message)
                     .then(function (response) {
-                    console.log("SUCCESS: " + user.nickname + response);
+                    console.log("SUCCESS: " + user.nickname + " " + response);
                     Message_2.Message.create({
                         user_id: user.id,
                         ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
