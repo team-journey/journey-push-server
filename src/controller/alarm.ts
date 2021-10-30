@@ -1,8 +1,8 @@
 import FCM from "fcm-node";
 import path from "path";
 import sequelize from 'sequelize';
+import { eveningMentForComplete, eveningMentForNotComplete, morningMentForComplete, morningMentForNotComplete } from '../dummy/Message';
 
-import { eveningMent, morningMent, notSuccessMent } from '../dummy/Message';
 import { Message } from '../models/Message';
 import { User } from '../models/User';
 
@@ -34,11 +34,12 @@ export default {
         const user = users[i];
         const token = user.token;
 
-        const ment = (user.is_completed) ? pickRandom(morningMent) : pickRandom(notSuccessMent);
+        const ment = (user.is_completed) ? pickRandom(morningMentForComplete) : pickRandom(morningMentForNotComplete);
         const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
         console.log('morning ment: ' + msgMent);
         const message = {
           data: {
+            title: '오늘의 모행 메세지 🐱',
             body: msgMent,
           },
           token: user.token
@@ -79,13 +80,14 @@ export default {
 
       for (let i = 0; i < 1; i++) {
         const user = users[i];
-        const token = 'eP_7zOUGF0dPmSAttYbxLM:APA91bFbNIzqWvlzZS1ZfetTGnkW2bLiBI9G1d7r1t1aJD4qO5tMWr70qo5wcH15vbpc5wI7sJFHADagAudhb8ujruNPQX8zcmSXaFoNfA1fcFCnevj4ymSBmn7NjcC_EFdB333y2b8D';
+        const token = user.token;
 
-        const ment = (user.is_completed) ? pickRandom(eveningMent) : pickRandom(notSuccessMent);
+        const ment = (user.is_completed) ? pickRandom(eveningMentForComplete) : pickRandom(eveningMentForNotComplete);
         const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
         console.log('evening ment: ' + msgMent);
         const message = {
           data: {
+            title: '오늘의 모행 메세지 🐱',
             body: msgMent,
           },
           token: token
@@ -111,7 +113,7 @@ export default {
             console.log("SUCCESS: " + response);
             Message.create({
               user_id: user.id,
-              ment: ment.join("ㅡ"),
+              ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
               is_new: false
             });
           })

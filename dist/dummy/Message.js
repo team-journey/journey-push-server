@@ -1,20 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.notSuccessMent = exports.eveningMent = exports.morningMent = void 0;
-exports.morningMent = [
-    ["ㅁㅁㅁ, 모행?", "오늘도 나랑 놀아주려 왔구나!!!", "씐나게 놀아보자~!"],
-    ["ㅁㅁㅁ~ 기다렸다구~", "재밌는 오늘의 챌린지를 하면서", "나랑 놀자~~"],
-    ["야아아악!!! ㅁㅁㅁ! 나! 랑! 놀! 아! 나랑! 놀아! 줘!!!"]
+exports.eveningMentForNotComplete = exports.eveningMentForComplete = exports.morningMentForNotComplete = exports.morningMentForComplete = void 0;
+exports.morningMentForComplete = [
+    ["ㅁㅁㅁ, 잘 자고 일어났어?", "오늘도 하루도 파이팅이닷!٩( ᐛ )و"],
+    ["ㅁㅁㅁ,  아침 꼬옥 챙겨먹는거 ", "잊으면 안돼 ㅠㅠ! ƪ(ړײ)‎ƪ"],
+    ["ㅁㅁㅁ, 오늘 기분은 어때?", "행복한 하루 보내길 바라~ ᜊ( ' ⩊ '𖦹)ᜊ"]
 ];
-exports.eveningMent = [
-    ["벌써 밤이야! 인증하고 일찍 자자-내일 만나 안뇽"],
-    ["ㅁㅁㅁ, 바쁜 하루 중에도", "자신을 위한 휴식은 잊지마!!! =ㅇ="],
-    ["ㅁㅁㅁ 밥먹었냐? 뭐먹었냐?", "맛있었냠? 저녁은 뭐먹을거냠?"]
+exports.morningMentForNotComplete = [
+    ["ㅁㅁㅁ, 일어났어?", "오늘의 챌린지를 확인해봐! ଘ(੭ˊ꒳ˋ)੭✧"],
+    ["ㅁㅁㅁ, 오늘 컨디션 어때?", "챌린지 수행하구 행복한 하루를 보내봐! (◍•ᴗ•◍)"],
+    ["오늘 하루가 ㅁㅁㅁ에게 아주 좋은 날이 될거야", "모행 챌린지와 함께라면 ~ (ᗒᗊᗕ)"]
 ];
-exports.notSuccessMent = [
-    ["ㅁㅁㅁ, 오늘 챌린지도 잊으면 안돼~~!!! ‘ㅅ'"],
-    ["어이 ㅁㅁㅁ, 동작그만!", "지금 뭐허냐? 다른 일 일시 중지!!"],
-    ["ㅁㅁㅁ... 날 잊었던 거야?", "아니면 나보다 더 재밌는 친구랑 있었던 거야?", "조금 서운해!"],
-    ["ㅁㅁㅁ!", "왜 요즘 연락이 뜸해 =ㅅ=", "어떻게 사는지 말해주러 와라"]
+exports.eveningMentForComplete = [
+    ["ㅁㅁㅁ, 오늘도 정말 수고했어", "남은 하루도 행복하게 마무리했으면 좋겠당 (๑′ᴗ‵๑)"],
+    ["ㅁㅁㅁ, 저녁은 먹었어?", "맛있는거 먹구 신나게 즐겨 (۶•̀ᴗ•́)۶"],
+    ["ㅁㅁㅁ, 오늘도 무사히 보냈어?", "남은 저녁시간 즐겁게 보내 ≡(*′▽`)っ"]
+];
+exports.eveningMentForNotComplete = [
+    ["ㅁㅁㅁ, 벌써 8시넹", "챌린지를 완성하구 하루를 잘 마무리 해봐~ ⁽͑˙˚̀ᵕ˚́˙⁾̉"],
+    ["ㅁㅁㅁ, 하루가 다 끝나가~", "오늘의 안부를 남기고 싶지않아? ◕‿◕✿"],
+    ["ㅁㅁㅁ, 머해 머해~", "모행 챌린지와 하루를 재밌게 끝내봐~ (•̀ᴗ•́)و ̑̑"]
 ];
 //# sourceMappingURL=Message.js.map
