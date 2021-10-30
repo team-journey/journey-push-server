@@ -89,33 +89,33 @@ export default {
           token: 'cHxgy8RoH04ntCehongfNT:APA91bG4cMACurZvRhdtZfTRQOL1smdv3t5-eV0I_WgPgdutxa-ctx2PKQ6Mq1QKYIt_EDqwoUG3vt9ZbEIfcfS98qFuyUhyW_cLh94CrW3k_uuUHeTRh2Qa9vkEthe8m9WYgJMKX3BE'
         };
         
-        // fcm.send(message, function (err, response) {
-        //   if (err) {
-        //     console.log("FAIL: " + err.message);
-        //   } else {
-        //     console.log("SUCCESS: " + response);
-        //     Message.create({
-        //       user_id: user.id,
-        //       ment: ment.join("ㅡ"),
-        //       is_new: false
-        //     });
-        //   }
-        // });
-
-        admin
-          .messaging()
-          .send(message)
-          .then(function (response) {
+        fcm.send(message, function (err, response) {
+          if (err) {
+            console.log("FAIL: " + err.message);
+          } else {
             console.log("SUCCESS: " + user.nickname + " " +  response);
             Message.create({
               user_id: user.id,
               ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
               is_new: false
             });
-          })
-          .catch(function (err) {
-            console.log("FAIL: " + err.message);
-          });
+          }
+        });
+
+        // admin
+        //   .messaging()
+        //   .send(message)
+        //   .then(function (response) {
+        //     console.log("SUCCESS: " + user.nickname + " " +  response);
+        //     Message.create({
+        //       user_id: user.id,
+        //       ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
+        //       is_new: false
+        //     });
+        //   })
+        //   .catch(function (err) {
+        //     console.log("FAIL: " + err.message);
+        //   });
       }
     } catch (err) {
       console.log('********************* evening alarm error *********************');

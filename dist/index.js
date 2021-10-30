@@ -22,7 +22,7 @@ const morning = node_schedule_1.default.scheduleJob('0 6 14 * * *', async functi
     await alarm_1.default.morning();
     console.log(`종료 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
 });
-const evening = node_schedule_1.default.scheduleJob('30 6 14 * * *', async function () {
+const evening = node_schedule_1.default.scheduleJob('0 10 14 * * *', async function () {
     let date = new Date();
     console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
     await alarm_1.default.evening();
