@@ -14,7 +14,7 @@ sequelize.authenticate()
 let ex = new Date();
 console.log('서버시간: ' + ex);
 
-const morning = schedule.scheduleJob('0 50 13 * * *', async function () {
+const morning = schedule.scheduleJob('0 55 13 * * *', async function () {
   let date = new Date();
   console.log(
     `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
@@ -31,7 +31,7 @@ const morning = schedule.scheduleJob('0 50 13 * * *', async function () {
   );
 });
 
-const evening = schedule.scheduleJob('0 51 13 * * *', async function () {
+const evening = schedule.scheduleJob('0 56 13 * * *', async function () {
   let date = new Date();
   console.log(
     `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(

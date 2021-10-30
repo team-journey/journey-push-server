@@ -28,10 +28,8 @@ exports.default = {
                     }
                 }
             });
-            console.log(users);
             for (let i = 0; i < users.length; i++) {
                 const user = users[i];
-                const token = user.token;
                 const ment = (user.is_completed) ? pickRandom(Message_1.morningMentForComplete) : pickRandom(Message_1.morningMentForNotComplete);
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
                 console.log('morning ment: ' + msgMent);
@@ -46,10 +44,10 @@ exports.default = {
                     .messaging()
                     .send(message)
                     .then(function (response) {
-                    console.log("SUCCESS: " + response);
+                    console.log("SUCCESS: " + user.nickname + response);
                     Message_2.Message.create({
                         user_id: user.id,
-                        ment: ment.join("ㅡ"),
+                        ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
                         is_new: false
                     });
                 })
@@ -74,10 +72,8 @@ exports.default = {
                     }
                 }
             });
-            console.log(users);
             for (let i = 0; i < 1; i++) {
                 const user = users[i];
-                const token = user.token;
                 const ment = (user.is_completed) ? pickRandom(Message_1.eveningMentForComplete) : pickRandom(Message_1.eveningMentForNotComplete);
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
                 console.log('evening ment: ' + msgMent);
@@ -86,7 +82,7 @@ exports.default = {
                         title: '오늘의 모행 메세지 🐱',
                         body: msgMent,
                     },
-                    token: token
+                    token: user.token
                 };
                 // fcm.send(message, function (err, response) {
                 //   if (err) {
@@ -104,7 +100,7 @@ exports.default = {
                     .messaging()
                     .send(message)
                     .then(function (response) {
-                    console.log("SUCCESS: " + response);
+                    console.log("SUCCESS: " + user.nickname + response);
                     Message_2.Message.create({
                         user_id: user.id,
                         ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
