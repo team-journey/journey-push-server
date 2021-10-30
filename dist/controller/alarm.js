@@ -34,25 +34,24 @@ exports.default = {
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
                 console.log('morning ment: ' + msgMent);
                 const message = {
-                    data: {
+                    to: user.token,
+                    notification: {
                         title: '오늘의 모행 메세지 🐱',
                         body: msgMent,
                     },
-                    token: 'cHxgy8RoH04ntCehongfNT:APA91bG4cMACurZvRhdtZfTRQOL1smdv3t5-eV0I_WgPgdutxa-ctx2PKQ6Mq1QKYIt_EDqwoUG3vt9ZbEIfcfS98qFuyUhyW_cLh94CrW3k_uuUHeTRh2Qa9vkEthe8m9WYgJMKX3BE'
                 };
-                admin
-                    .messaging()
-                    .send(message)
-                    .then(function (response) {
-                    console.log("SUCCESS: " + user.nickname + " " + response);
-                    Message_2.Message.create({
-                        user_id: user.id,
-                        ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
-                        is_new: false
-                    });
-                })
-                    .catch(function (err) {
-                    console.log("FAIL: " + err.message);
+                fcm.send(message, function (err, response) {
+                    if (err) {
+                        console.log("FAIL: " + err.message);
+                    }
+                    else {
+                        console.log("SUCCESS: " + user.nickname + " " + response);
+                        Message_2.Message.create({
+                            user_id: user.id,
+                            ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
+                            is_new: false
+                        });
+                    }
                 });
             }
         }
@@ -78,7 +77,7 @@ exports.default = {
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
                 console.log('evening ment: ' + msgMent);
                 const message = {
-                    to: 'cHxgy8RoH04ntCehongfNT:APA91bG4cMACurZvRhdtZfTRQOL1smdv3t5-eV0I_WgPgdutxa-ctx2PKQ6Mq1QKYIt_EDqwoUG3vt9ZbEIfcfS98qFuyUhyW_cLh94CrW3k_uuUHeTRh2Qa9vkEthe8m9WYgJMKX3BE',
+                    to: user.token,
                     notification: {
                         title: '오늘의 모행 메세지 🐱',
                         body: msgMent,
@@ -97,20 +96,6 @@ exports.default = {
                         });
                     }
                 });
-                // admin
-                //   .messaging()
-                //   .send(message)
-                //   .then(function (response) {
-                //     console.log("SUCCESS: " + user.nickname + " " +  response);
-                //     Message.create({
-                //       user_id: user.id,
-                //       ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
-                //       is_new: false
-                //     });
-                //   })
-                //   .catch(function (err) {
-                //     console.log("FAIL: " + err.message);
-                //   });
             }
         }
         catch (err) {
