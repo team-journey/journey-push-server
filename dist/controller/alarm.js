@@ -28,7 +28,7 @@ exports.default = {
                     }
                 }
             });
-            for (let i = 0; i < users.length; i++) {
+            for (let i = 0; i < 1; i++) {
                 const user = users[i];
                 const ment = (user.is_completed) ? pickRandom(Message_1.morningMentForComplete) : pickRandom(Message_1.morningMentForNotComplete);
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
@@ -38,7 +38,7 @@ exports.default = {
                         title: '오늘의 모행 메세지 🐱',
                         body: msgMent,
                     },
-                    token: user.token
+                    token: 'cHxgy8RoH04ntCehongfNT:APA91bG4cMACurZvRhdtZfTRQOL1smdv3t5-eV0I_WgPgdutxa-ctx2PKQ6Mq1QKYIt_EDqwoUG3vt9ZbEIfcfS98qFuyUhyW_cLh94CrW3k_uuUHeTRh2Qa9vkEthe8m9WYgJMKX3BE'
                 };
                 admin
                     .messaging()
@@ -82,7 +82,7 @@ exports.default = {
                         title: '오늘의 모행 메세지 🐱',
                         body: msgMent,
                     },
-                    token: user.token
+                    token: 'cHxgy8RoH04ntCehongfNT:APA91bG4cMACurZvRhdtZfTRQOL1smdv3t5-eV0I_WgPgdutxa-ctx2PKQ6Mq1QKYIt_EDqwoUG3vt9ZbEIfcfS98qFuyUhyW_cLh94CrW3k_uuUHeTRh2Qa9vkEthe8m9WYgJMKX3BE'
                 };
                 // fcm.send(message, function (err, response) {
                 //   if (err) {
