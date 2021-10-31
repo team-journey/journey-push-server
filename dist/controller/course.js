@@ -12,6 +12,7 @@ exports.default = {
             const users = await User_1.User.findAll({
                 attributes: ['id', 'current_course_id', 'current_challenge_id', 'current_progress_percent', 'is_completed']
             });
+            Course_1.courses.sort((a, b) => (a.getId() < b.getId() ? -1 : 1));
             for (let i = 0; i < users.length; i++) {
                 const user = users[i];
                 const id = user.id;
