@@ -2,6 +2,7 @@ import sequelize from './models';
 import schedule from "node-schedule";
 import alarm from './controller/alarm';
 import dayjs from "dayjs";
+import course from './controller/course';
 
 //시퀄라이즈
 sequelize.authenticate()
@@ -31,7 +32,7 @@ const morning = schedule.scheduleJob('0 0 1 * * *', async function () {
   );
 });
 
-const evening = schedule.scheduleJob('0 11 * * *', async function () {
+const evening = schedule.scheduleJob('0 0 11 * * *', async function () {
   let date = new Date();
   console.log(
     `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
@@ -40,6 +41,23 @@ const evening = schedule.scheduleJob('0 11 * * *', async function () {
   );
 
   await alarm.evening();
+
+  console.log(
+    `종료 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
+      'YYYY-MM-DD hh:mm:ss'
+    )} 입니다.`
+  );
+});
+
+const init = schedule.scheduleJob('0 0 20 * * *', async function () {
+  let date = new Date();
+  console.log(
+    `시작 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
+      'YYYY-MM-DD hh:mm:ss'
+    )} 입니다.`
+  );
+
+  await course.init();
 
   console.log(
     `종료 시각 ${dayjs(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format(
