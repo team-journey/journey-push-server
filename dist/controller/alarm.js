@@ -28,7 +28,7 @@ exports.default = {
                     }
                 }
             });
-            for (let i = 0; i < 1; i++) {
+            for (let i = 0; i < users.length; i++) {
                 const user = users[i];
                 const ment = (user.is_completed) ? pickRandom(Message_1.morningMentForComplete) : pickRandom(Message_1.morningMentForNotComplete);
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
@@ -71,7 +71,7 @@ exports.default = {
                     }
                 }
             });
-            for (let i = 0; i < 1; i++) {
+            for (let i = 0; i < users.length; i++) {
                 const user = users[i];
                 const ment = (user.is_completed) ? pickRandom(Message_1.eveningMentForComplete) : pickRandom(Message_1.eveningMentForNotComplete);
                 const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);

@@ -29,7 +29,7 @@ export default {
         }
       });
 
-      for (let i = 0; i < 1; i++) {
+      for (let i = 0; i < users.length; i++) {
         const user = users[i];
 
         const ment = (user.is_completed) ? pickRandom(morningMentForComplete) : pickRandom(morningMentForNotComplete);
@@ -73,7 +73,7 @@ export default {
         }
       });
 
-      for (let i = 0; i < 1; i++) {
+      for (let i = 0; i < users.length; i++) {
         const user = users[i];
 
         const ment = (user.is_completed) ? pickRandom(eveningMentForComplete) : pickRandom(eveningMentForNotComplete);
