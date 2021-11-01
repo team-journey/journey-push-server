@@ -51,7 +51,7 @@ export default {
             Message.create({
               user_id: user.id,
               ment: ment.join("ㅡ"),
-              is_new: false
+              is_new: true
             });
           }
         });
@@ -95,7 +95,7 @@ export default {
             Message.create({
               user_id: user.id,
               ment: ment.join("ㅡ"),
-              is_new: false
+              is_new: true
             });
           }
         });
@@ -135,7 +135,7 @@ export default {
           Message.create({
             user_id: user.id,
             ment: ment.join("ㅡ"),
-            is_new: false
+            is_new: true
           });
         }
       });
