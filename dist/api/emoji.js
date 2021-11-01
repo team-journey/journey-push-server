@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const alarm_1 = __importDefault(require("../controller/alarm"));
 const router = express_1.default.Router();
 router.get("/", async (req, res) => {
+    console.log("GET " + req.header("feed-user-id"));
     await alarm_1.default.emoji(req.header("feed-user-id"));
 });
 module.exports = router;

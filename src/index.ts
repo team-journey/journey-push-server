@@ -16,7 +16,22 @@ sequelize.authenticate()
     });
 
 app.use(express.json());
-app.use("/", require("./api/emoji"));
+app.use("/api/emoji", require("./api/emoji"));
+
+// error handler
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "production" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.json({
+    message: err.message,
+    error: err
+  });
+  res.render("error");
+});
 
 app
   .listen(5555, () => {
