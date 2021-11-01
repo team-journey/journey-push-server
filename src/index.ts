@@ -18,6 +18,19 @@ sequelize.authenticate()
 app.use(express.json());
 app.use("/", require("./api/emoji"));
 
+app
+  .listen(5555, () => {
+    console.log(`
+    ################################################
+    🛡️  Server listening on port: 5000 🛡️
+    ################################################
+  `);
+  })
+  .on("error", (err) => {
+    console.error(err);
+    process.exit(1);
+  });
+
 let ex = new Date();
 console.log('서버시간: ' + ex);
 

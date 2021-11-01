@@ -19,6 +19,18 @@ models_1.default.authenticate()
 });
 app.use(express_1.default.json());
 app.use("/", require("./api/emoji"));
+app
+    .listen(5555, () => {
+    console.log(`
+    ################################################
+    🛡️  Server listening on port: 5000 🛡️
+    ################################################
+  `);
+})
+    .on("error", (err) => {
+    console.error(err);
+    process.exit(1);
+});
 let ex = new Date();
 console.log('서버시간: ' + ex);
 const morning = node_schedule_1.default.scheduleJob('0 0 1 * * *', async function () {
