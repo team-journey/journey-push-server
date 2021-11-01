@@ -50,7 +50,7 @@ export default {
             console.log("SUCCESS: " + user.nickname + " " +  response);
             Message.create({
               user_id: user.id,
-              ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
+              ment: ment.join("ㅡ"),
               is_new: false
             });
           }
@@ -94,7 +94,7 @@ export default {
             console.log("SUCCESS: " + user.nickname + " " +  response);
             Message.create({
               user_id: user.id,
-              ment: ment.join("ㅡ").replace(/ㅁㅁㅁ/gi, user.nickname),
+              ment: ment.join("ㅡ"),
               is_new: false
             });
           }
