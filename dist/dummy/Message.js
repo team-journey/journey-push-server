@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.eveningMentForNotComplete = exports.eveningMentForComplete = exports.morningMentForNotComplete = exports.morningMentForComplete = void 0;
+exports.emojiMent = exports.eveningMentForNotComplete = exports.eveningMentForComplete = exports.morningMentForNotComplete = exports.morningMentForComplete = void 0;
 exports.morningMentForComplete = [
     ["ㅁㅁㅁ, 잘 자고 일어났어?", "오늘도 하루도 파이팅이닷!٩( ᐛ )و"],
     ["ㅁㅁㅁ,  아침 꼬옥 챙겨먹는거 ", "잊으면 안돼 ㅠㅠ! ƪ(ړײ)‎ƪ"],
@@ -20,5 +20,8 @@ exports.eveningMentForNotComplete = [
     ["ㅁㅁㅁ, 벌써 8시넹", "챌린지를 완성하구 하루를 잘 마무리 해봐~ ⁽͑˙˚̀ᵕ˚́˙⁾̉"],
     ["ㅁㅁㅁ, 하루가 다 끝나가~", "오늘의 안부를 남기고 싶지않아? ◕‿◕✿"],
     ["ㅁㅁㅁ, 머해 머해~", "모행 챌린지와 하루를 재밌게 끝내봐~ (•̀ᴗ•́)و ̑̑"]
+];
+exports.emojiMent = [
+    ["ㅁㅁㅁ, 너의 안부에 스티커가 붙여졌어!!", "얼른 확인해봐~≡(*′▽`)っ"]
 ];
 //# sourceMappingURL=Message.js.map

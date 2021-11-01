@@ -3,6 +3,9 @@ import schedule from "node-schedule";
 import alarm from './controller/alarm';
 import dayjs from "dayjs";
 import course from './controller/course';
+import express from "express";
+
+const app = express();
 
 //시퀄라이즈
 sequelize.authenticate()
@@ -11,6 +14,9 @@ sequelize.authenticate()
     }).catch((err) => {
         console.error(err);
     });
+
+app.use(express.json());
+app.use("/", require("./api/emoji"));
 
 let ex = new Date();
 console.log('서버시간: ' + ex);

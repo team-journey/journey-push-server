@@ -8,6 +8,8 @@ const node_schedule_1 = __importDefault(require("node-schedule"));
 const alarm_1 = __importDefault(require("./controller/alarm"));
 const dayjs_1 = __importDefault(require("dayjs"));
 const course_1 = __importDefault(require("./controller/course"));
+const express_1 = __importDefault(require("express"));
+const app = (0, express_1.default)();
 //시퀄라이즈
 models_1.default.authenticate()
     .then(() => {
@@ -15,6 +17,8 @@ models_1.default.authenticate()
 }).catch((err) => {
     console.error(err);
 });
+app.use(express_1.default.json());
+app.use("/", require("./api/emoji"));
 let ex = new Date();
 console.log('서버시간: ' + ex);
 const morning = node_schedule_1.default.scheduleJob('0 0 1 * * *', async function () {

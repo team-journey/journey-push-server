@@ -102,6 +102,45 @@ exports.default = {
             console.log('********************* evening alarm error *********************');
             console.error(err.message);
         }
+    },
+    emoji: async (userId) => {
+        if (!userId)
+            return;
+        try {
+            const user = await User_1.User.findOne({
+                attributes: ['id', 'token', 'nickname'],
+                where: { id: userId }
+            });
+            if (!user)
+                return;
+            const ment = Message_1.emojiMent[0];
+            const msgMent = ment.join(" ").replace(/ㅁㅁㅁ/gi, user.nickname);
+            console.log('emoji ment: ' + msgMent);
+            const message = {
+                to: user.token,
+                notification: {
+                    title: '오늘의 모행 메세지 🐱',
+                    body: msgMent,
+                },
+            };
+            fcm.send(message, function (err, response) {
+                if (err) {
+                    console.log("FAIL: " + err.message);
+                }
+                else {
+                    console.log("SUCCESS: " + user.nickname + " " + response);
+                    Message_2.Message.create({
+                        user_id: user.id,
+                        ment: ment.join("ㅡ"),
+                        is_new: false
+                    });
+                }
+            });
+        }
+        catch (err) {
+            console.log('********************* evening alarm error *********************');
+            console.error(err.message);
+        }
     }
 };
 function pickRandom(array) {
