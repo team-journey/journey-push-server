@@ -9,6 +9,10 @@ const router = express_1.default.Router();
 router.get("/", async (req, res) => {
     console.log("GET " + req.header("feed-user-id"));
     await alarm_1.default.emoji(req.header("feed-user-id"));
+    res.status(200).json({
+        "status": 200,
+        "message": "success"
+    });
 });
 module.exports = router;
 //# sourceMappingURL=emoji.js.map
