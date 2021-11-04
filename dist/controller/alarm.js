@@ -49,7 +49,7 @@ exports.default = {
                         Message_2.Message.create({
                             user_id: user.id,
                             ment: ment.join("ㅡ"),
-                            is_new: false
+                            is_new: true
                         });
                     }
                 });
@@ -92,7 +92,7 @@ exports.default = {
                         Message_2.Message.create({
                             user_id: user.id,
                             ment: ment.join("ㅡ"),
-                            is_new: false
+                            is_new: true
                         });
                     }
                 });
@@ -132,7 +132,7 @@ exports.default = {
                     Message_2.Message.create({
                         user_id: user.id,
                         ment: ment.join("ㅡ"),
-                        is_new: false
+                        is_new: true
                     });
                 }
             });

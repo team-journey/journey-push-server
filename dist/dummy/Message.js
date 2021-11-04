@@ -22,6 +22,6 @@ exports.eveningMentForNotComplete = [
     ["ㅁㅁㅁ, 머해 머해~", "모행 챌린지와 하루를 재밌게 끝내봐~ (•̀ᴗ•́)و ̑̑"]
 ];
 exports.emojiMent = [
-    ["ㅁㅁㅁ, 너의 안부에 스티커가 붙여졌어!!", "얼른 확인해봐~≡(*′▽`)っ"]
+    ["ㅁㅁㅁ, 누군가 네 안부에 스티커를 붙여줬나봐!!", "얼른 확인해보자~ (✧u✧)"]
 ];
 //# sourceMappingURL=Message.js.map
