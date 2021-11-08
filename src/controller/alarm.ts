@@ -1,10 +1,12 @@
 import FCM from "fcm-node";
 import path from "path";
 import sequelize from 'sequelize';
+import mement from "moment";
 import { emojiMent, eveningMentForComplete, eveningMentForNotComplete, morningMentForComplete, morningMentForNotComplete } from '../dummy/Message';
 
 import { Message } from '../models/Message';
 import { User } from '../models/User';
+import moment from 'moment';
 
 const admin = require('firebase-admin');
 const firebaseAccount = require(path.join(__dirname, "../../mohaeng.json"));
@@ -141,6 +143,41 @@ export default {
       });
     } catch (err) {
       console.log('********************* evening alarm error *********************');
+      console.error(err.message);
+    }
+  },
+  testing: async () => {
+    try {
+      const user = await User.findOne({
+        attributes: ['id', 'token', 'nickname', 'is_completed'],
+        where: {
+          id: 97
+        }
+      });
+
+      const message = {
+        to: user.token,
+        notification: {
+          title: '오늘의 모행 메세지 🐱',
+          body: '테스트',
+        },
+      };
+        
+      fcm.send(message, function (err, response) {
+        if (err) {
+          console.log("FAIL: " + err.message);
+        } else {
+          console.log("SUCCESS: " + user.nickname + " " +  response);
+          Message.create({
+            user_id: user.id,
+            ment: '테스트',
+            is_new: true,
+            date: new Date(moment().add(9, 'hours').format())
+          });
+        }
+      });
+    } catch (err) {
+      console.log('********************* testing alarm error *********************');
       console.error(err.message);
     }
   }

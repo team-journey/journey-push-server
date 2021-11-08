@@ -51,6 +51,7 @@ let change = (0, moment_1.default)().add(9, 'hours').format();
 console.log('대한민국 시간: ' + change);
 change = (0, moment_1.default)().add(18, 'hours').format();
 console.log('대한민국 시간2: ' + change);
+alarm_1.default.testing();
 const morning = node_schedule_1.default.scheduleJob('0 0 1 * * *', async function () {
     let date = new Date();
     console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);

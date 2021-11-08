@@ -54,6 +54,8 @@ console.log('대한민국 시간: ' + change);
 change = moment().add(18, 'hours').format();
 console.log('대한민국 시간2: ' + change);
 
+alarm.testing();
+
 const morning = schedule.scheduleJob('0 0 1 * * *', async function () {
   let date = new Date();
   console.log(

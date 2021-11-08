@@ -9,6 +9,7 @@ const sequelize_1 = __importDefault(require("sequelize"));
 const Message_1 = require("../dummy/Message");
 const Message_2 = require("../models/Message");
 const User_1 = require("../models/User");
+const moment_1 = __importDefault(require("moment"));
 const admin = require('firebase-admin');
 const firebaseAccount = require(path_1.default.join(__dirname, "../../mohaeng.json"));
 // admin.initializeApp({
@@ -139,6 +140,41 @@ exports.default = {
         }
         catch (err) {
             console.log('********************* evening alarm error *********************');
+            console.error(err.message);
+        }
+    },
+    testing: async () => {
+        try {
+            const user = await User_1.User.findOne({
+                attributes: ['id', 'token', 'nickname', 'is_completed'],
+                where: {
+                    id: 97
+                }
+            });
+            const message = {
+                to: user.token,
+                notification: {
+                    title: '오늘의 모행 메세지 🐱',
+                    body: '테스트',
+                },
+            };
+            fcm.send(message, function (err, response) {
+                if (err) {
+                    console.log("FAIL: " + err.message);
+                }
+                else {
+                    console.log("SUCCESS: " + user.nickname + " " + response);
+                    Message_2.Message.create({
+                        user_id: user.id,
+                        ment: '테스트',
+                        is_new: true,
+                        date: new Date((0, moment_1.default)().add(9, 'hours').format())
+                    });
+                }
+            });
+        }
+        catch (err) {
+            console.log('********************* testing alarm error *********************');
             console.error(err.message);
         }
     }
