@@ -47,11 +47,11 @@ app
     process.exit(1);
   });
 
-let ex = moment();
+let ex = moment().format();
 console.log('서버시간: ' + ex);
-let change = ex.add(9, 'hours');
+let change = moment().add(9, 'hours').format();
 console.log('대한민국 시간: ' + change);
-change = change.add(9, 'hours');
+change = moment().add(18, 'hours').format();
 console.log('대한민국 시간2: ' + change);
 
 const morning = schedule.scheduleJob('0 0 1 * * *', async function () {

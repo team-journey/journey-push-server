@@ -9,6 +9,7 @@ const alarm_1 = __importDefault(require("./controller/alarm"));
 const dayjs_1 = __importDefault(require("dayjs"));
 const course_1 = __importDefault(require("./controller/course"));
 const express_1 = __importDefault(require("express"));
+const moment_1 = __importDefault(require("moment"));
 const app = (0, express_1.default)();
 //시퀄라이즈
 models_1.default.authenticate()
@@ -44,10 +45,12 @@ app
     console.error(err);
     process.exit(1);
 });
-let ex = new Date();
+let ex = (0, moment_1.default)().format();
 console.log('서버시간: ' + ex);
-let change = ex.setHours(ex.getHours() + 9);
+let change = (0, moment_1.default)().add(9, 'hours').format();
 console.log('대한민국 시간: ' + change);
+change = (0, moment_1.default)().add(18, 'hours').format();
+console.log('대한민국 시간2: ' + change);
 const morning = node_schedule_1.default.scheduleJob('0 0 1 * * *', async function () {
     let date = new Date();
     console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
