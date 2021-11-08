@@ -4,6 +4,7 @@ import alarm from './controller/alarm';
 import dayjs from "dayjs";
 import course from './controller/course';
 import express from "express";
+import moment from "moment";
 
 const app = express();
 
@@ -46,10 +47,12 @@ app
     process.exit(1);
   });
 
-let ex = new Date();
+let ex = moment();
 console.log('서버시간: ' + ex);
-let change = ex.setHours(ex.getHours() + 9);
+let change = ex.add(9, 'hours');
 console.log('대한민국 시간: ' + change);
+change = change.add(9, 'hours');
+console.log('대한민국 시간2: ' + change);
 
 const morning = schedule.scheduleJob('0 0 1 * * *', async function () {
   let date = new Date();
