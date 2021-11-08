@@ -48,6 +48,8 @@ app
 
 let ex = new Date();
 console.log('서버시간: ' + ex);
+let change = ex.setHours(ex.getHours() + 9);
+console.log('대한민국 시간: ' + change);
 
 const morning = schedule.scheduleJob('0 0 1 * * *', async function () {
   let date = new Date();
