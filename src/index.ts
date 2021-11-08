@@ -47,15 +47,6 @@ app
     process.exit(1);
   });
 
-let ex = moment().format();
-console.log('서버시간: ' + ex);
-let change = moment().add(9, 'hours').format();
-console.log('대한민국 시간: ' + change);
-change = moment().add(18, 'hours').format();
-console.log('대한민국 시간2: ' + change);
-
-alarm.testing();
-
 const morning = schedule.scheduleJob('0 0 1 * * *', async function () {
   let date = new Date();
   console.log(
