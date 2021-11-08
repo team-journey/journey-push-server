@@ -46,6 +46,8 @@ app
 });
 let ex = new Date();
 console.log('서버시간: ' + ex);
+let change = ex.setHours(ex.getHours() + 9);
+console.log('대한민국 시간: ' + change);
 const morning = node_schedule_1.default.scheduleJob('0 0 1 * * *', async function () {
     let date = new Date();
     console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
