@@ -44,6 +44,7 @@ app
     console.error(err);
     process.exit(1);
 });
+console.log("현재시간: " + new Date());
 const morning = node_schedule_1.default.scheduleJob('0 0 1 * * *', async function () {
     let date = new Date();
     console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
