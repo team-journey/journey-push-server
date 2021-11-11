@@ -57,7 +57,7 @@ const evening = node_schedule_1.default.scheduleJob('0 0 11 * * *', async functi
     await alarm_1.default.evening();
     console.log(`종료 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
 });
-const init = node_schedule_1.default.scheduleJob('0 40 3 * * *', async function () {
+const init = node_schedule_1.default.scheduleJob('0 0 20 * * *', async function () {
     let date = new Date();
     console.log(`시작 시각 ${(0, dayjs_1.default)(date.toLocaleString('en', { timeZone: 'Asia/Seoul' })).format('YYYY-MM-DD hh:mm:ss')} 입니다.`);
     await course_1.default.init();
